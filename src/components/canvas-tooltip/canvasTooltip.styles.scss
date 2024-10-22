@@ -1,0 +1,19 @@
+#e3d-ui-tooltip {
+  position: absolute;
+  background-color: white;
+  pointer-events: none;
+  width: 340px;
+  transform: translate(-50%, 5%);
+  color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: 250ms ease-out 0s 1 fadeIn;
+  max-width: calc(100% - 2px);
+}
+.e3d-ui-tooltip * {
+  pointer-events: none;
+}
+.hidden {
+  display: none;
+}

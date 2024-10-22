@@ -1,0 +1,15 @@
+.e3d-ui-player-controls {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  padding: 30px 30px 45px;
+  pointer-events: none;
+}
+
+.e3d-ui-player-controls__wrapper {
+  pointer-events: auto;
+  position: relative;
+  width: 100%;
+  margin-top: auto;
+}

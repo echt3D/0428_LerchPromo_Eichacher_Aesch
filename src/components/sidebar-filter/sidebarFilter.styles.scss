@@ -1,0 +1,58 @@
+.sidebar-filter-container {
+  display: flex;
+  flex-direction: column;
+  padding: 22px 16px;
+}
+
+.sidebar-filter-section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 640px) {
+  .sidebar-filter-section span {
+    max-width: 60vw;
+    margin-right: 5vw;
+    text-align: right;
+  }
+  .sidebar-filter-section {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 0px;
+  }
+}
+
+.sidebar-filter-section h3 {
+  font-size: 18px;
+  margin-bottom: 0px;
+}
+
+.sidebar-filter-checkboxes {
+  display: flex;
+  flex-direction: row;
+}
+
+[class^="MuiSlider-root"] {
+  color: #848247 !important;
+}
+
+@media (min-width: 640px) {
+  [class^="MuiSlider-root"] {
+    margin: 0px 5% !important;
+    max-width: 90% !important;
+  }
+}
+
+[class^="MuiSlider-thumb"]:hover,
+[class^="MuiSlider-thumb"].Mui-focusVisible {
+  box-shadow: 0px 0px 0px 8px #84824737 !important;
+}
+
+.MuiButtonBase-root.MuiCheckbox-root.Mui-checked {
+  color: #848247 !important;
+}
+
+.MuiFormControlLabel-label {
+  color: #000000;
+}

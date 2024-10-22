@@ -1,0 +1,18 @@
+.e3d-ui-sidebar__list-item {
+  margin: 8px 8px 0px 8px;
+}
+
+.e3d-ui-sidebar_flat-list-item {
+  cursor: pointer;
+}
+
+@media (max-width: 960px) {
+  .MuiCard-root {
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0) 8px,
+      #fff 8px
+    ) !important;
+  }
+}

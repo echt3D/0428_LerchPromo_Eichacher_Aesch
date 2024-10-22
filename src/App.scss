@@ -1,0 +1,26 @@
+.e3d-app {
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  button svg {
+    min-width: 22px;
+    min-height: 22px;
+    transform-origin: 11px, 11px !important;
+  }
+}
+
+@media (min-width: 640px) {
+  button svg {
+    min-width: 30px;
+    min-height: 30px;
+    transform-origin: 16px, 16px !important;
+  }
+}
+
+.e3d-ui-footer {
+  height: 16px;
+  background-color: grey;
+}

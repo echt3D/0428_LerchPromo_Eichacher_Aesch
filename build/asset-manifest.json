@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/0428_LePro_Eichacher_Aesch/static/css/main.b4055836.css",
+    "main.js": "/0428_LePro_Eichacher_Aesch/static/js/main.b6a07a67.js",
+    "static/js/787.5a0694a7.chunk.js": "/0428_LePro_Eichacher_Aesch/static/js/787.5a0694a7.chunk.js",
+    "static/media/logo.jpg": "/0428_LePro_Eichacher_Aesch/static/media/logo.e9998500b1bdb923b46f.jpg",
+    "static/media/ansprechperson.jpg": "/0428_LePro_Eichacher_Aesch/static/media/ansprechperson.0eb0b35f2e73d29a620c.jpg",
+    "index.html": "/0428_LePro_Eichacher_Aesch/index.html",
+    "main.b4055836.css.map": "/0428_LePro_Eichacher_Aesch/static/css/main.b4055836.css.map",
+    "main.b6a07a67.js.map": "/0428_LePro_Eichacher_Aesch/static/js/main.b6a07a67.js.map",
+    "787.5a0694a7.chunk.js.map": "/0428_LePro_Eichacher_Aesch/static/js/787.5a0694a7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b4055836.css",
+    "static/js/main.b6a07a67.js"
+  ]
+}

@@ -1,0 +1,30 @@
+.e3d-ui-sidebar-container {
+  // height: 100vh;
+  transition: all 0.3s ease-out;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  & > * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  z-index: 999;
+}
+[id^="e3d-ui-sidebar-tab_panel-"] {
+  overflow-y: scroll;
+}
+@media (max-width: 640px) {
+  [id^="e3d-ui-sidebar-tab_panel-"] {
+    min-height: 182px !important;
+    height: 182px !important;
+  }
+}
+
+// #e3d-ui-sidebar-tab_panel-1 {
+//   overflow: hidden !important;
+// }
+
+.e3d-ui-sidebar__logo img {
+  width: 100%;
+}
