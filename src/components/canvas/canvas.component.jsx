@@ -33,7 +33,8 @@ function Canvas({ setMousePos, clickOnFlatCardOrPath }) {
 
   const [hoveredPath, setHoveredPath] = useState(null); // Add this state
 
-  const baseURL = process.env.REACT_APP_BASE_URL;
+  const baseURL =
+    "https://wohnungsfinder.echt3d.ch/0428_LePro_Eichacher_Aesch/";
 
   const currentPreloadedImage = preloadedImages.find(
     (img) => img.view === actualView
@@ -61,6 +62,8 @@ function Canvas({ setMousePos, clickOnFlatCardOrPath }) {
     const imageUrls = state.project.backgroundImages.map(
       (view) => `${baseURL}/data/${view.replace("f", "")}.jpg`
     );
+
+    console.log("imageUrls", imageUrls);
 
     imageUrls.forEach((url, index) => {
       const img = new Image();
@@ -205,7 +208,6 @@ function Canvas({ setMousePos, clickOnFlatCardOrPath }) {
   const heightScale = containerSize.height / bounds.height;
   const widthScale = containerSize.width / bounds.width;
   const scaleRatio = Math.max(heightScale, widthScale);
-
 
   return (
     <div

@@ -75,7 +75,7 @@ export const flatsRooms = [3.5, 5.5];
 export const flatsMinArea = 102;
 export const flatsMaxArea = 191;
 export const flatsMinPrice = 1451000;
-export const flatsMaxPrice = 2225000;
+export const flatsMaxPrice = 2231200;
 export const flatsMinFloor = -1;
 export const flatsMaxFloor = 2;
 
