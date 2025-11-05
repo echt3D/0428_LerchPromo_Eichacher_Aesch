@@ -74,73 +74,36 @@ export const grayChipTextColor = "white";
 export const flatsRooms = [3.5, 5.5];
 export const flatsMinArea = 102;
 export const flatsMaxArea = 191;
-export const flatsMinPrice = 1451000;
-export const flatsMaxPrice = 2231200;
 export const flatsMinFloor = -1;
 export const flatsMaxFloor = 2;
 
-function getMinMax(url) {
-  fetch(url, {
-    headers: {
-      Accept: "application/json", // Set the Accept header to indicate JSON response
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      // Initialize variables to store the minimum and maximum values
-      let rooms = [];
-      let minArea = Number.POSITIVE_INFINITY;
-      let maxArea = Number.NEGATIVE_INFINITY;
-      let minPrice = Number.POSITIVE_INFINITY;
-      let maxPrice = Number.NEGATIVE_INFINITY;
-      let minFloor = Number.POSITIVE_INFINITY;
-      let maxFloor = Number.NEGATIVE_INFINITY;
+export const { flatsMinPrice, flatsMaxPrice } = await getMinMaxPrice(
+  "https://ameichacher.api.melon.sale/api/v1/objects/?format=json"
+);
 
-      // Iterate over each object in the JSON array
-      for (let i = 0; i < data.length; i++) {
-        const object = data[i];
-
-        if (!rooms.includes(object.rooms)) {
-          rooms.push(object.rooms);
-        }
-        // Check for minimum and maximum values for "area"
-        if (object.area < minArea) {
-          minArea = object.area;
-        }
-        if (object.area > maxArea) {
-          maxArea = object.area;
-        }
-
-        // Check for minimum and maximum values for "rentalgross"
-        if (object.rentalgross < minPrice) {
-          minPrice = object.rentalgross;
-        }
-        if (object.rentalgross > maxPrice) {
-          maxPrice = object.rentalgross;
-        }
-
-        // Check for minimum and maximum values for "floor_num"
-        if (object.floor_num < minFloor) {
-          minPrice = object.floor_num;
-        }
-        if (object.floor_num > maxFloor) {
-          maxPrice = object.floor_num;
-        }
-      }
-
-      // Output the minimum and maximum values
-      console.log("Minimum and maximum values:");
-      console.log("Rooms - Min:", rooms);
-      console.log("Area - Min:", minArea, "Max:", maxArea);
-      console.log("Selling Price - Min:", minPrice, "Max:", maxPrice);
-      console.log("Floor - Min:", minFloor, "Max:", maxFloor);
-    })
-    .catch((error) => {
-      console.log("Error fetching data:", error);
+async function getMinMaxPrice(url) {
+  try {
+    const response = await fetch(url, {
+      headers: { Accept: "application/json" },
     });
-}
+    const data = await response.json();
 
-// getMinMax("https://ameichacher.api.melon.sale/api/v1/objects/?format=json");
+    if (!Array.isArray(data) || data.length === 0) {
+      throw new Error("No data returned from API");
+    }
+
+    const sortedByPrice = data.sort(
+      (a, b) => a.selling_price - b.selling_price
+    );
+    const minPrice = sortedByPrice[0].selling_price;
+    const maxPrice = sortedByPrice[sortedByPrice.length - 1].selling_price;
+
+    return { flatsMinPrice: minPrice, flatsMaxPrice: maxPrice };
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return { flatsMinPrice: null, flatsMaxPrice: null };
+  }
+}
 
 // function getMinMaxConvertedData(convertedData) {
 //   // Initialize variables to store the minimum and maximum values
