@@ -6,9 +6,9 @@
   },
 "overrides": {
   "schema-utils": "3.3.0",
-  "ajv": "6.12.6",
-  "ajv-keywords": "3.5.2",
-  "ajv-formats": "1.5.1"
+  "babel-loader": {
+    "schema-utils": "2.7.1"
+  }
 },
   "private": true,
   "homepage": ".",
@@ -61,6 +61,8 @@
     ]
   },
   "devDependencies": {
+    "babel-loader": "8.4.1",
+    "schema-utils": "3.3.0",
     "@welldone-software/why-did-you-render": "^7.0.1",
     "npm-force-resolutions": "^0.0.10"
   }
