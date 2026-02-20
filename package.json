@@ -2,7 +2,7 @@
   "name": "konfigurator-ui",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://wohnungsfinder.echt3d.ch/0428_LePro_Eichacher_Aesch",
+  "homepage": ".",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
