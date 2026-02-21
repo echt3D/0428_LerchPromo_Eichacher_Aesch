@@ -131,14 +131,13 @@ useEffect(() => {
 
   const images = nums.map((num) => {
     const img = new Image();
-    img.src = `${process.env.PUBLIC_URL}/data/${num}.jpg`;
+    img.src = `${PUBLIC}/data/${num}.jpg`;   // ✅ PUBLIC verwenden
     return img;
   });
 
-  // erstes Bild setzen (1001)
+  // erstes Bild setzen
   images[0].onload = () => setBackgroundImage(images[0]);
 
-  // optional: alle preloadten Bilder speichern
   setPreloadedImages(images);
 
   return () => {
@@ -147,7 +146,7 @@ useEffect(() => {
       img.onerror = null;
     });
   };
-}, []);
+}, [PUBLIC]);   // ✅ Dependency ergänzen
 
   function initializeOrUpdateCanvas() {
     canvas = canvasRef.current;
