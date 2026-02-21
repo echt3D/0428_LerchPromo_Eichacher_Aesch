@@ -38,7 +38,7 @@ function CardTitleInformation({
       />
       {modalToClose ? <CloseModal modalToClose={modalToClose} /> : ""}
       <Typography component="h3" variant="h5">
-        {props?.rooms}-Zimmer{" "}
+        {props?.rooms}-Zimmer-Wohnung{" "}
         {isBigScreen ? props.short_title : props.short_title}
         {props?.property_type}
       </Typography>
