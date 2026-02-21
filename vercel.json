@@ -1,0 +1,6 @@
+{
+    "rewrites": [
+      { "source": "/0428_LePro_Eichacher_Aesch", "destination": "/0428_LePro_Eichacher_Aesch/" },
+      { "source": "/0428_LePro_Eichacher_Aesch/(.*)", "destination": "/" }
+    ]
+  }
