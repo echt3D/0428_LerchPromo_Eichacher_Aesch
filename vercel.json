@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/0428_LePro_Eichacher_Aesch/",
+      "permanent": false
+    }
+  ],
   "rewrites": [
     {
       "source": "/0428_LePro_Eichacher_Aesch/(.*)",
