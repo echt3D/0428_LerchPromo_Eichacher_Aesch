@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/0428_LePro_Eichacher_Aesch/(.*)",
+      "destination": "/$1"
+    }
+  ]
+}
