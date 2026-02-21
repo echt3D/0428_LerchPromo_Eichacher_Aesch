@@ -33,18 +33,17 @@ function Canvas({ setMousePos, clickOnFlatCardOrPath }) {
 
   const [hoveredPath, setHoveredPath] = useState(null); // Add this state
 
-  const baseURL =
-    "https://wohnungsfinder.echt3d.ch/0428_LePro_Eichacher_Aesch/";
+ const PUBLIC = process.env.PUBLIC_URL;
 
   const currentPreloadedImage = preloadedImages.find(
     (img) => img.view === actualView
   );
 
-  const [image, status] = useImage(
-    currentPreloadedImage
-      ? null
-      : `${baseURL}/data/${actualView.replace("f", "")}.jpg`
-  );
+const [image, status] = useImage(
+  currentPreloadedImage
+    ? null
+    : `${PUBLIC}/data/${actualView.replace("f", "")}.jpg`
+);
 
   useEffect(() => {
     setAcualView(state.project.backgroundImages[backgroundImgIndex]);
@@ -59,23 +58,24 @@ function Canvas({ setMousePos, clickOnFlatCardOrPath }) {
   const { isFavorite } = useFavorites();
 
   const preloadImages = useCallback(() => {
-    const imageUrls = state.project.backgroundImages.map(
-      (view) => `${baseURL}/data/${view.replace("f", "")}.jpg`
-    );
+  const imageUrls = state.project.backgroundImages.map(
+    (view) => `${PUBLIC}/data/${view.replace("f", "")}.jpg`
+  );
 
-    console.log("imageUrls", imageUrls);
-
-    imageUrls.forEach((url, index) => {
-      const img = new Image();
-      img.src = url;
-      img.onload = () => {
-        setPreloadedImages((prev) => [
-          ...prev,
-          { view: state.project.backgroundImages[index], img },
-        ]);
-      };
-    });
-  }, [baseURL, state.project.backgroundImages]);
+  imageUrls.forEach((url, index) => {
+    const img = new Image();
+    img.src = url;
+    img.onload = () => {
+      setPreloadedImages((prev) => [
+        ...prev,
+        { view: state.project.backgroundImages[index], img },
+      ]);
+    };
+    img.onerror = () => {
+      console.error("Preload failed:", url);
+    };
+  });
+}, [PUBLIC, state.project.backgroundImages]);
 
   useEffect(() => {
     preloadImages();
