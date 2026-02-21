@@ -1,0 +1,162 @@
+[
+        {
+          "id": "9901",
+          "title": "Whg. 9901",
+          "name": "Whg. 9901",
+          "rooms": 5.5,
+          "area": 191,
+          "floor": "Gartengeschoss",
+          "floor_num": -1,
+          "selling_price": 2230800,
+          "state_simplyfied_en": "free",
+          "factsheet": "/files/grundrisse/Grundriss_Whg_9901.pdf",
+          "reservation_url": "https://ameichacher.ch/reservation?wohnung=9901",
+          "url": "https://ameichacher.ch/reservation?wohnung=9901",
+          "ref": "https://ameichacher.ch/reservation?wohnung=9901"
+        },
+
+        {
+            "id": "1",
+            "title": "Whg. 1",
+            "name": "Whg. 1",
+            "rooms": 4.5,
+            "area": 112,
+            "floor": "Erdgeschoss",
+            "floor_num": 0,
+            "selling_price": null,
+            "state_simplyfied_en": "sold",
+            "factsheet": "/files/grundrisse/Grundriss_Whg_1.pdf",
+            "reservation_url": null,
+            "url": null,
+            "ref": null
+          },
+
+          {
+              "id": "2",
+              "title": "Whg. 2",
+              "name": "Whg. 2",
+              "rooms": 3.5,
+              "area": 106,
+              "floor": "Erdgeschoss",
+              "floor_num": 0,
+              "selling_price": 1681200,
+              "state_simplyfied_en": "free",
+              "factsheet": "/files/grundrisse/Grundriss_Whg_2.pdf",
+              "reservation_url": "https://ameichacher.ch/reservation?wohnung=2",
+              "url": "https://ameichacher.ch/reservation?wohnung=2",
+              "ref": "https://ameichacher.ch/reservation?wohnung=2"
+            },
+
+            {
+                "id": "3",
+                "title": "Whg. 3",
+                "name": "Whg. 3",
+                "rooms": 3.5,
+                "area": 102,
+                "floor": "Erdgeschoss",
+                "floor_num": 0,
+                "selling_price": 1606000,
+                "state_simplyfied_en": "free",
+                "factsheet": "/files/grundrisse/Grundriss_Whg_3.pdf",
+                "reservation_url": "https://ameichacher.ch/reservation?wohnung=3",
+                "url": "https://ameichacher.ch/reservation?wohnung=3",
+                "ref": "https://ameichacher.ch/reservation?wohnung=3"
+              },
+
+              {
+                  "id": "101",
+                  "title": "Whg. 101",
+                  "name": "Whg. 101",
+                  "rooms": 4.5,
+                  "area": 112,
+                  "floor": "Obergeschoss",
+                  "floor_num": 1,
+                  "selling_price": 1650600,
+                  "state_simplyfied_en": "free",
+                  "factsheet": "/files/grundrisse/Grundriss_Whg_101.pdf",
+                  "reservation_url": "https://ameichacher.ch/reservation?wohnung=101",
+                  "url": "https://ameichacher.ch/reservation?wohnung=101",
+                  "ref": "https://ameichacher.ch/reservation?wohnung=101"
+                },
+
+                {
+                    "id": "102",
+                    "title": "Whg. 102",
+                    "name": "Whg. 102",
+                    "rooms": 3.5,
+                    "area": 106,
+                    "floor": "Obergeschoss",
+                    "floor_num": 1,
+                    "selling_price": null,
+                    "state_simplyfied_en": "sold",
+                    "factsheet": "/files/grundrisse/Grundriss_Whg_102.pdf",
+                    "reservation_url": null,
+                    "url": null,
+                    "ref": null
+                  },
+
+                  {
+                      "id": "103",
+                      "title": "Whg. 103",
+                      "name": "Whg. 103",
+                      "rooms": 3.5,
+                      "area": 102,
+                      "floor": "Obergeschoss",
+                      "floor_num": 1,
+                      "selling_price": null,
+                      "state_simplyfied_en": "sold",
+                      "factsheet": "/files/grundrisse/Grundriss_Whg_103.pdf",
+                      "reservation_url": null,
+                      "url": null,
+                      "ref": null
+                    },
+
+                    {
+                        "id": "201",
+                        "title": "Whg. 201",
+                        "name": "Whg. 201",
+                        "rooms": 4.5,
+                        "area": 112,
+                        "floor": "Dachgeschoss",
+                        "floor_num": 2,
+                        "selling_price": null,
+                        "state_simplyfied_en": "reserved",
+                        "factsheet": "/files/grundrisse/Grundriss_Whg_201.pdf",
+                        "reservation_url": null,
+                        "url": null,
+                        "ref": null
+                      },
+
+                      {
+                          "id": "202",
+                          "title": "Whg. 202",
+                          "name": "Whg. 202",
+                          "rooms": 3.5,
+                          "area": 106,
+                          "floor": "Dachgeschoss",
+                          "floor_num": 2,
+                          "selling_price": 1544300,
+                          "state_simplyfied_en": "free",
+                          "factsheet": "/files/grundrisse/Grundriss_Whg_202.pdf",
+                          "reservation_url": "https://ameichacher.ch/reservation?wohnung=202",
+                          "url": "https://ameichacher.ch/reservation?wohnung=202",
+                          "ref": "https://ameichacher.ch/reservation?wohnung=202"
+                        },
+
+                        {
+                            "id": "203",
+                            "title": "Whg. 203",
+                            "name": "Whg. 203",
+                            "rooms": 3.5,
+                            "area": 102,
+                            "floor": "Dachgeschoss",
+                            "floor_num": 2,
+                            "selling_price": 1455400,
+                            "state_simplyfied_en": "free",
+                            "factsheet": "/files/grundrisse/Grundriss_Whg_203.pdf",
+                            "reservation_url": "https://ameichacher.ch/reservation?wohnung=203",
+                            "url": "https://ameichacher.ch/reservation?wohnung=203",
+                            "ref": "https://ameichacher.ch/reservation?wohnung=203"
+                          }
+        
+  ]
