@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
-import * as appSetup from "../custom/appSetup";
-import { LivestateContext } from "./LivestateContext";
+import unitsData from "../data/units.json";
+// import * as appSetup from "../custom/appSetup";
+// import { LivestateContext } from "./LivestateContext";
 
 let initialState = {
   config: {
@@ -86,35 +87,8 @@ let initialState = {
       "https://client.echt3d.ch/0428_LerchPromo_Eichacher_Aesch_Rundgang/",
   },
 
-  units: {
-    1: {
-      adress: "",
-      area: "90.44",
-      custom_1: "",
-      custom_2: "",
-      custom_3: "97.5",
-      custom_4: "8",
-      custom_5: "",
-      custom_6: "",
-      document: "",
-      dsc: "WHG 1",
-      floor: "3",
-      id: "1",
-      name: "WHG 1",
-      player: "",
-      price: "1'980'000",
-      price_per_sm: "",
-      rooms: "4.5",
-      se_id: "0301",
-      status: "5",
-      tour: "",
-      tour_2: "",
-      type: "Wohnung",
-      url_1: "",
-      url_2: "",
-      url_3: "",
-    },
-  },
+  units: [],
+stateIsLoading: true,
   svg: {
     f1001: {
       "Whg. 201":
@@ -281,60 +255,19 @@ const ProjectData = ({ children }) => {
   const [state, setState] = useState(initialState);
 
   const getData = () => {
-    fetch(appSetup.dataPath, {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
-      .then(function (response) {
-        if (response.status !== 200) {
-          setState((prevState) => ({
-            ...prevState,
-            stateIsLoading: "error",
-          }));
-          throw new Error("External data not found");
-        } else {
-          return response.json();
-        }
-      })
-      .then(function (data) {
-        let apiFilteredResults, apiResults;
-        if (appSetup.apiMode === "flatfox") {
-          apiFilteredResults = data.results.filter((flatfoxData) => {
-            if (
-              flatfoxData.object_category === "APARTMENT" &&
-              flatfoxData.object_type !== "HOBBY_ROOM"
-            ) {
-              return true;
-            } else {
-              return false;
-            }
-          });
-          apiResults = apiFilteredResults.map((flatfoxData) => {
-            return appSetup.convertFlatfoxAPIToEmonitor(flatfoxData);
-          });
-        } else {
-          apiResults = data;
-        }
-        if (Array.isArray(apiResults)) {
-          setState((prevState) => ({
-            ...prevState,
-            units: apiResults,
-            stateIsLoading: false,
-          }));
-        } else {
-          setState((prevState) => ({
-            ...prevState,
-            stateIsLoading: "error",
-          }));
-          throw new Error("External data is not an array");
-        }
-        // console.log(apiResults);
-      })
-      .catch((error) => {
-        console.warn(error.message);
-      });
+    try {
+      setState((prevState) => ({
+        ...prevState,
+        units: unitsData,
+        stateIsLoading: false,
+      }));
+    } catch (error) {
+      console.warn(error);
+      setState((prevState) => ({
+        ...prevState,
+        stateIsLoading: "error",
+      }));
+    }
   };
 
   useEffect(() => {
