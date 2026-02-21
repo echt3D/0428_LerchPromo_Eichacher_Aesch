@@ -19,6 +19,7 @@ import { getColor } from "./canvasUtils";
 import { useMediaQuery } from "../../utils/useMediaQuery";
 
 const Canvas = () => {
+  const PUBLIC = process.env.PUBLIC_URL;
   const [state] = useContext(StateContext);
   const sidebarWidth = state.config.ui.sidebarWidth;
   const [livestate, setLivestate] = useContext(LivestateContext);
@@ -125,18 +126,28 @@ const Canvas = () => {
     setPanOffset({ x: 0, y: 0 });
   }, [backgroundImage]);
 
-  useEffect(() => {
-    const image = new Image();
-    image.src = "0428_LePro_Eichacher_Aesch/data/1001.jpg";
-    image.onload = () => {
-      setBackgroundImage(image);
-    };
+useEffect(() => {
+  const nums = [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008];
 
-    return () => {
-      image.onload = null;
-      image.onerror = null;
-    };
-  }, []);
+  const images = nums.map((num) => {
+    const img = new Image();
+    img.src = `${process.env.PUBLIC_URL}/data/${num}.jpg`;
+    return img;
+  });
+
+  // erstes Bild setzen (1001)
+  images[0].onload = () => setBackgroundImage(images[0]);
+
+  // optional: alle preloadten Bilder speichern
+  setPreloadedImages(images);
+
+  return () => {
+    images.forEach((img) => {
+      img.onload = null;
+      img.onerror = null;
+    });
+  };
+}, []);
 
   function initializeOrUpdateCanvas() {
     canvas = canvasRef.current;
