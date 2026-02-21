@@ -11,7 +11,7 @@
   }
 },
   "private": true,
-  "homepage": ".",
+  "homepage": "/0428_LePro_Eichacher_Aesch/",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
