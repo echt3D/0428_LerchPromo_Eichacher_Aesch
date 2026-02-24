@@ -1,9 +1,16 @@
 {
-  "redirects": [
-    {
-      "source": "/:path*",
-      "destination": "https://wohnungsfinder.echt3d.ch/0428_LePro_Eichacher_Aesch/:path*",
-      "permanent": true
-    }
-  ]
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/0428_LePro_Eichacher_Aesch/",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/0428_LePro_Eichacher_Aesch/(.*)",
+      "destination": "/$1"
+    }
+  ]
 }
+
