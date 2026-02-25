@@ -12,6 +12,10 @@
       "destination": "/static/:path*"
     },
     {
+      "source": "/0428_LePro_Eichacher_Aesch/data/:path*",
+      "destination": "/data/:path*"
+    },
+    {
       "source": "/0428_LePro_Eichacher_Aesch/asset-manifest.json",
       "destination": "/asset-manifest.json"
     },
