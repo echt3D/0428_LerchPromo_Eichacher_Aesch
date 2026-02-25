@@ -55,16 +55,12 @@ const [image, status] = useImage(
   const bounds = { width: 3000, height: 2000 };
 
   const svgPathsArr = Object.entries(state.svg[actualView]);
-  const { isFavorite } = useFavorites();
-
-const preloadImages = useCallback(() => {
-  const imageUrls = state.project.backgroundImages.map(
-    (view) =>
-      `${process.env.PUBLIC_URL}/data/${view.replace("f", "")}.jpg`
+  const { isFavorite } = useFavorites(); 
+  const preloadImages = useCallback(() => { 
+    const imageUrls = state.project.backgroundImages.map( 
+      (view) => ${PUBLIC}/data/${view.replace("f", "")}.jpg 
   );
 
-  // Rest deiner Funktion
-}, [state.project.backgroundImages]);
 
   imageUrls.forEach((url, index) => {
     const img = new Image();
