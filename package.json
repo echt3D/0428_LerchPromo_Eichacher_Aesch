@@ -1,17 +1,17 @@
 {
   "name": "konfigurator-ui",
   "version": "0.1.0",
+  "private": true,
   "engines": {
     "node": "20.x"
   },
-"overrides": {
-  "schema-utils": "3.3.0",
-  "babel-loader": {
-    "schema-utils": "2.7.1"
-  }
-},
-  "private": true,
-  "homepage": "/0428_LePro_Eichacher_Aesch/",
+  "homepage": "/0428_LePro_Eichacher_Aesch",
+  "overrides": {
+    "schema-utils": "3.3.0",
+    "babel-loader": {
+      "schema-utils": "2.7.1"
+    }
+  },
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
@@ -37,6 +37,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "prebuild": "npm install",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
