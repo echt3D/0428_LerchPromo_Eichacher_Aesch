@@ -57,10 +57,14 @@ const [image, status] = useImage(
   const svgPathsArr = Object.entries(state.svg[actualView]);
   const { isFavorite } = useFavorites();
 
-  const preloadImages = useCallback(() => {
+const preloadImages = useCallback(() => {
   const imageUrls = state.project.backgroundImages.map(
-    (view) => `${PUBLIC}/data/${view.replace("f", "")}.jpg`
+    (view) =>
+      `${process.env.PUBLIC_URL}/data/${view.replace("f", "")}.jpg`
   );
+
+  // Rest deiner Funktion
+}, [state.project.backgroundImages]);
 
   imageUrls.forEach((url, index) => {
     const img = new Image();
