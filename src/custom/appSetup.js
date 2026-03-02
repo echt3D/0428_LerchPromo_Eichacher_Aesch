@@ -1,3 +1,4 @@
+import units from "../data/units.json";
 export const mode = "production"; // test, production
 
 export const apiMode = "emonitor"; // emonitor, flatfox
@@ -15,8 +16,7 @@ export const ansprechperson = {
 export const drawMarksAlways = true;
 
 export const dataPathTest = "./dataJSON/test-api.json";
-export const dataPathProd =
-  "https://ameichacher.api.melon.sale/api/v1/objects/?format=json";
+export const dataPathProd = units;
 export const dataPath = mode === "production" ? dataPathProd : dataPathTest;
 
 // Global Colors
@@ -77,30 +77,29 @@ export const flatsMaxArea = 191;
 export const flatsMinFloor = -1;
 export const flatsMaxFloor = 2;
 
-export const { flatsMinPrice, flatsMaxPrice } = await getMinMaxPrice(
-  "https://ameichacher.api.melon.sale/api/v1/objects/?format=json"
-);
+export const { flatsMinPrice, flatsMaxPrice } = getMinMaxPriceFromArray(units);
 
-async function getMinMaxPrice(url) {
+function getMinMaxPriceFromArray(data) {
   try {
-    const response = await fetch(url, {
-      headers: { Accept: "application/json" },
-    });
-    const data = await response.json();
-
     if (!Array.isArray(data) || data.length === 0) {
-      throw new Error("No data returned from API");
+      throw new Error("No data in units.json");
     }
 
-    const sortedByPrice = data.sort(
-      (a, b) => a.selling_price - b.selling_price
-    );
-    const minPrice = sortedByPrice[0].selling_price;
-    const maxPrice = sortedByPrice[sortedByPrice.length - 1].selling_price;
+    // Nur echte Zahlen (bei dir sind sold/reserved oft null)
+    const prices = data
+      .map((x) => x?.selling_price)
+      .filter((p) => typeof p === "number" && Number.isFinite(p));
 
-    return { flatsMinPrice: minPrice, flatsMaxPrice: maxPrice };
+    if (prices.length === 0) {
+      return { flatsMinPrice: null, flatsMaxPrice: null };
+    }
+
+    return {
+      flatsMinPrice: Math.min(...prices),
+      flatsMaxPrice: Math.max(...prices),
+    };
   } catch (error) {
-    console.error("Error fetching data:", error);
+    console.error("Error calculating prices:", error);
     return { flatsMinPrice: null, flatsMaxPrice: null };
   }
 }
