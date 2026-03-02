@@ -1,8 +1,39 @@
 {
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/0428_LePro_Eichacher_Aesch/",
+      "permanent": false
+    }
+  ],
   "rewrites": [
     {
-      "source": "/0428_LePro_Eichacher_Aesch/(.*)",
-      "destination": "/$1"
+      "source": "/0428_LePro_Eichacher_Aesch/static/:path*",
+      "destination": "/static/:path*"
+    },
+    {
+      "source": "/0428_LePro_Eichacher_Aesch/data/:path*",
+      "destination": "/data/:path*"
+    },
+    {
+      "source": "/0428_LePro_Eichacher_Aesch/asset-manifest.json",
+      "destination": "/asset-manifest.json"
+    },
+    {
+      "source": "/0428_LePro_Eichacher_Aesch/manifest.json",
+      "destination": "/manifest.json"
+    },
+    {
+      "source": "/0428_LePro_Eichacher_Aesch/favicon.ico",
+      "destination": "/favicon.ico"
+    },
+    {
+      "source": "/0428_LePro_Eichacher_Aesch/robots.txt",
+      "destination": "/robots.txt"
+    },
+    {
+      "source": "/0428_LePro_Eichacher_Aesch/:path*",
+      "destination": "/index.html"
     }
   ]
 }
