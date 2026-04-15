@@ -120,7 +120,7 @@
                         "floor": "Dachgeschoss",
                         "floor_num": 2,
                         "selling_price": null,
-                        "state_simplyfied_en": "reserved",
+                        "state_simplyfied_en": "sold",
                         "factsheet": "/files/grundrisse/Grundriss_Whg_201.pdf",
                         "reservation_url": null,
                         "url": null,
