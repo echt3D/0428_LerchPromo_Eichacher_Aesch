@@ -152,7 +152,7 @@
                             "floor": "Dachgeschoss",
                             "floor_num": 2,
                             "selling_price": 1455400,
-                            "state_simplyfied_en": "reserved",
+                            "state_simplyfied_en": "free",
                             "factsheet": "/files/grundrisse/Grundriss_Whg_203.pdf",
                             "reservation_url": "https://ameichacher.ch/reservation?wohnung=203",
                             "url": "https://ameichacher.ch/reservation?wohnung=203",
