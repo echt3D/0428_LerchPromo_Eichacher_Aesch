@@ -48,6 +48,25 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+## Status-Dashboard (Kundin)
+
+Unter `/admin` kann die Kundin den Status der Wohnungen (frei, reserviert, verkauft) selbst anpassen.
+Login ohne Passwort: Mail-Adresse eingeben, Login-Link per Mail (15 Minuten gültig), danach 8 Stunden eingeloggt.
+Zugang haben die Adressen in `ADMIN_EMAILS` (Standard siehe `api/admin.js`).
+
+Beim Speichern committet `api/admin.js` die Änderung an `src/data/units.json` direkt auf `main`;
+Vercel deployt danach automatisch (ca. 1–2 Minuten).
+
+Einrichtung in Vercel (Project → Settings → Environment Variables, Production und Preview):
+
+- `ADMIN_SESSION_SECRET` – zufälliger String, mindestens 32 Zeichen (z. B. `openssl rand -base64 48`)
+- `GITHUB_TOKEN` – Fine-grained Personal Access Token, nur für dieses Repo, Berechtigung „Contents: Read and write“
+- `RESEND_API_KEY` – API-Key von Resend
+- `ADMIN_MAIL_FROM` – Absender, z. B. `echt3D <no-reply@echt3d.ch>`; die Domain muss in Resend verifiziert sein
+- optional `ADMIN_EMAILS` (kommagetrennt), `ADMIN_MAIL_REPLY_TO` (Standard `it@echt3d.ch`)
+
+Danach einmal neu deployen. Lokal ohne `RESEND_API_KEY` wird der Login-Link nur ins Log geschrieben.
+
 ## Supported Browsers
 
 By default, the generated project is configured to support the following browsers:
