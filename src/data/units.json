@@ -56,7 +56,7 @@
                 "floor": "Erdgeschoss",
                 "floor_num": 0,
                 "selling_price": 1606000,
-                "state_simplyfied_en": "free",
+                "state_simplyfied_en": "reserved",
                 "factsheet": "/files/grundrisse/Grundriss_Whg_3.pdf",
                 "reservation_url": "https://ameichacher.ch/reservation?wohnung=3",
                 "url": "https://ameichacher.ch/reservation?wohnung=3",
