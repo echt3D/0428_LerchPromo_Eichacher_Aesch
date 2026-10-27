@@ -8,6 +8,10 @@
   ],
   "rewrites": [
     {
+      "source": "/admin",
+      "destination": "/api/admin"
+    },
+    {
       "source": "/0428_LePro_Eichacher_Aesch/static/:path*",
       "destination": "/static/:path*"
     },

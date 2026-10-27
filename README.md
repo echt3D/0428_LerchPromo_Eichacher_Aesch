@@ -48,6 +48,19 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+## Status-Dashboard (Kundin)
+
+Unter `/admin` kann die Kundin den Status der Wohnungen (frei, reserviert, verkauft) selbst anpassen.
+Beim Speichern committet `api/admin.js` die Änderung an `src/data/units.json` direkt auf `main`;
+Vercel deployt danach automatisch (ca. 1–2 Minuten).
+
+Einrichtung in Vercel (Project → Settings → Environment Variables, Production):
+
+- `ADMIN_PASSWORD` – Passwort für die Kundin
+- `GITHUB_TOKEN` – Fine-grained Personal Access Token, nur für dieses Repo, Berechtigung „Contents: Read and write“
+
+Danach einmal neu deployen.
+
 ## Supported Browsers
 
 By default, the generated project is configured to support the following browsers:
